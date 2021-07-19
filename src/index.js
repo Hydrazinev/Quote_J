@@ -49,7 +49,14 @@ function tweetQuote(){
     window.open(tweetURL,'_blank');
 }
 
+function change() {
+    fetch('https://source.unsplash.com//collection/1319040/3840×1200').then(e => {document.body.style.backgroundImage = `url(${e.url})`;
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = 'cover';})
+}
+
 newQuoteButton.addEventListener("click",getQUOTE);
+newQuoteButton.addEventListener("click", change);
 twitterButton.addEventListener("click",tweetQuote);
 
 
